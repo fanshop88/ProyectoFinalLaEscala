@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="spinner">
+        <mat-spinner class="spinner" *ngIf="loading"></mat-spinner>
+    </div>
+    <div class="row ml-0 mr-0 center-xs">
+        <mat-card class="filtro">
+            <div>Buscar por:</div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Tipo</mat-label>
+                    <mat-select (selectionChange)="getDebut($event)">
+                        <mat-option *ngFor="let dbt of debutList" value="{{dbt.id}}">{{dbt.id}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </mat-card>
+    </div>
+    <div>
+        <div class="row ml-0 mr-0">
+            <app-debut-card class="col-xs-12 col-sm-6 col-md-4" *ngFor="let debut of debutList | paginate: { id: 'debutGrid', 
+          itemsPerPage: pageSize, 
+          currentPage: page, 
+          totalItems: totalItems }" [debut]="debut">
+            </app-debut-card>
+        </div>
+        <div class="text-center" *ngIf="debutList.length > 1">
+            <pagination-controls (pageChange)="pageChanged($event)" previousLabel='Anterior' nextLabel='Siguiente' id='debutGrid' class="paginador"></pagination-controls>
+        </div>
+    </div>
+</div>

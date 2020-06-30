@@ -1,0 +1,51 @@
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    height: 120px;
+    text-align: center;
+}
+
+.mat-toolbar {
+    margin-top: 60px;
+    background: linear-gradient(181deg, #9918da85, #0801e086, #01b3e07c);
+    background-size: 600% 600%;
+    color: rgba(255, 255, 255, 0.87);
+    -webkit-animation: bg-animation 7s ease infinite;
+    -moz-animation: bg-animation 7s ease infinite;
+    animation: bg-animation 7s ease infinite;
+}
+
+@-webkit-keyframes bg-animation {
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 51% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+@-moz-keyframes bg-animation {
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 51% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 51% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
+}

@@ -1,0 +1,15 @@
+<mat-card class="card">
+    <div class="img-container">
+        <img mat-card-image class="image" [src]="debut.image" alt="">
+    </div>
+    <mat-card-header class="center-xs">
+        <mat-card-title class="card-title">{{ debut.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-subtitle class="text-center">
+        {{debut.midia}} | {{debut.release}}
+    </mat-card-subtitle>
+    <mat-card-content>
+        {{debut.description}}
+    </mat-card-content>
+
+</mat-card>

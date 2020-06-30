@@ -1,0 +1,26 @@
+.card {
+    margin-bottom: 1rem;
+}
+
+.img-container {
+    height: 250px;
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+}
+
+.mat-card-image {
+    width: initial !important;
+    margin: initial !important;
+    height: 100%;
+}
+
+.card-title {
+    text-align: center;
+    margin: 1rem 0;
+    color: rgb(71, 17, 221);
+}
+
+.text-center {
+    text-align: center;
+}

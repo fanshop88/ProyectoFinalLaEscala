@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="spinner">
+        <mat-spinner class="spinner" *ngIf="loading"></mat-spinner>
+    </div>
+
+    <div class="row center-xs mt-xs mb-xs" *ngIf="character">
+        <mat-card class="card">
+            <div class="row">
+                <div class="col-md-6">
+                    <button mat-button (click)="onBack()" class="mb-xs">Volver</button>
+                    <img mat-card-image class="character-image" [src]="character.image">
+                </div>
+                <div class="col-md-6">
+                    <h2>
+                        Name: {{character.name}}
+                    </h2>
+
+                    <mat-list role="list">
+                        <mat-list-item role="listitem" *ngIf="character.age"><b>Age:</b>&nbsp; {{character.age || 'hidden in the cosmos'}}</mat-list-item>
+                        <mat-list-item role="listitem" *ngIf="character.gender"><b>Gender:</b>&nbsp; {{character.gender || 'hidden in the cosmos'}}</mat-list-item>
+                        <mat-list-item role="listitem" *ngIf="character.nationality"><b>Nationality:</b>&nbsp; {{character.nationality || 'hidden in the cosmos'}}</mat-list-item>
+                        <mat-list-item role="listitem" *ngIf="character.heught"><b>Height:</b>&nbsp; {{character.height || 'hidden in the cosmos'}}</mat-list-item>
+                        <mat-list-item role="listitem" *ngIf="character.width"><b>Width:</b>&nbsp; {{character.width || 'hidden in the cosmos'}}</mat-list-item>
+                        <mat-list-item role="listitem" *ngIf="character.midia === undefined"><b>Debut:</b>&nbsp; {{character.debut || 'hidden in the cosmos'}}</mat-list-item>
+                        <mat-list-item role="listitem" *ngIf="character.master.length === 0"><b>Master:</b>&nbsp; {{character.master || 'hidden in the cosmos'}}</mat-list-item>
+                        <mat-list-item role="listitem" *ngIf="character.attacks.lenght === 0"><b>Attacks:</b>&nbsp; {{character.attacks || 'hidden in the cosmos'}}</mat-list-item>
+                        <mat-list-item role="listitem" *ngIf="character.midia"><b>Midia:</b>&nbsp; {{character.midia || 'hidden in the cosmos'}}</mat-list-item>
+                    </mat-list>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+
+</div>

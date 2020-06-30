@@ -1,0 +1,12 @@
+<mat-card class="card">
+    <div class="img-container">
+        <img mat-card-image class="image" [src]="character.image" alt="">
+    </div>
+    <mat-card-header class="center-xs">
+        <mat-card-title class="card-title">{{ character.name }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-actions class="end-xs">
+        <button mat-button color="primary" (click)="moreInformation(character.id)">Más info</button>
+    </mat-card-actions>
+</mat-card>

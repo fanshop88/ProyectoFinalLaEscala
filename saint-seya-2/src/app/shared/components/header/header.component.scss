@@ -1,0 +1,51 @@
+.mat-toolbar.mat-primary {
+    background: rgba(64, 13, 219, 1);
+    background: linear-gradient(232deg, #9918da88, #0801e094, #01b3e08a);
+    background-size: 600% 600%;
+    -webkit-animation: animation-bg 7s ease infinite;
+    -moz-animation: animation-bg 7s ease infinite;
+    animation: animation-bg 7s ease infinite;
+}
+
+@-webkit-keyframes animation-bg {
+    0% {
+        background-position: 0% 78%
+    }
+    50% {
+        background-position: 100% 23%
+    }
+    100% {
+        background-position: 0% 78%
+    }
+}
+
+@-moz-keyframes animation-bg {
+    0% {
+        background-position: 0% 78%
+    }
+    50% {
+        background-position: 100% 23%
+    }
+    100% {
+        background-position: 0% 78%
+    }
+}
+
+@keyframes animation-bg {
+    0% {
+        background-position: 0% 78%
+    }
+    50% {
+        background-position: 100% 23%
+    }
+    100% {
+        background-position: 0% 78%
+    }
+}
+
+.logo {
+    height: 120px;
+    img {
+        height: 80px;
+    }
+}
