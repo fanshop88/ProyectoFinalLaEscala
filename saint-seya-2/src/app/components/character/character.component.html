@@ -3,17 +3,6 @@
         <mat-spinner class="spinner" *ngIf="loading"></mat-spinner>
     </div>
     <div *ngIf="!loading">
-        <div class="row ml-0 mr-0 center-xs">
-            <mat-card class="filtro">
-                <div>Buscar por:</div>
-                <div>
-                    <mat-form-field>
-                        <mat-label>Nombre</mat-label>
-                        <input matInput (keyup)="filterByName($event)">
-                    </mat-form-field>
-                </div>
-            </mat-card>
-        </div>
         <div class="row ml-0 mr-0">
             <app-character-card class="col-xs-12 col-sm-6 col-md-4" *ngFor="let character of characterList | paginate: { id: 'characterGrid', 
           itemsPerPage: pageSize, 

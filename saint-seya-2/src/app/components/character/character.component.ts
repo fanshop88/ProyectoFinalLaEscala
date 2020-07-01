@@ -47,10 +47,4 @@ export class CharacterComponent implements OnInit {
     this.page = page;
   }
 
-  filterByName(name: any){
-    this.characterList = this.characterList.filter(cls => {
-      cls.name.includes(name.srcElement.value);
-    });
-  }
-
 }

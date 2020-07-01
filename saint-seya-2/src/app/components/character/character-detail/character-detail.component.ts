@@ -38,15 +38,8 @@ export class CharacterDetailComponent implements OnInit {
       this.loading = false;
     },
     error => {
-      swal.fire('Ha Ocurrido un error', 'Intente nuevamente, sí el problema persiste puede que el servicio no este funcionando.', 'error');
+      swal.fire('Interrupcion en el cosmos', 'Eleve su cosmo nuevamente.', 'error');
     });
-
-    if (isNaN(id) || id === null || id <= 0) {
-      swal.fire('La ID ingresa no es válida', 'Asegurate ingresando desde la botón ver más en las tarjetas de los personajes', 'error');
-      this.router.navigate(['character-not-found'] )
-      return;
-    }
-
   }
 
 }

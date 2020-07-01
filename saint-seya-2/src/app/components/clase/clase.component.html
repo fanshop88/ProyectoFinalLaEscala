@@ -8,12 +8,6 @@
                 <div>Buscar por:</div>
                 <div>
                     <mat-form-field>
-                        <mat-label>Nombre</mat-label>
-                        <input matInput (keyup)="filterByName($event)">
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field>
                         <mat-label>Tipo</mat-label>
                         <mat-select (selectionChange)="getClassByName($event)">
                             <mat-option *ngFor="let cls of claseName" value="{{cls.name}}">{{cls.name}}</mat-option>
