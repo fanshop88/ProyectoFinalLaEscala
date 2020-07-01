@@ -2,21 +2,22 @@
     <div class="spinner">
         <mat-spinner class="spinner" *ngIf="loading"></mat-spinner>
     </div>
-    <div class="row ml-0 mr-0 center-xs">
+    <div class="row ml-0 mr-0 center-xs" *ngIf="!loading">
         <mat-card class="filtro">
             <div>Buscar por:</div>
             <div>
                 <mat-form-field>
                     <mat-label>Tipo</mat-label>
                     <mat-select (selectionChange)="getDebut($event)">
-                        <mat-option *ngFor="let dbt of debutList" value="{{dbt.id}}">{{dbt.id}}</mat-option>
+                        <mat-option value="all">All</mat-option>
+                        <mat-option *ngFor="let dbt of debutSetList" value="{{dbt.id}}">{{dbt.name}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
         </mat-card>
     </div>
     <div>
-        <div class="row ml-0 mr-0">
+        <div class="row ml-0 mr-0 center-xs">
             <app-debut-card class="col-xs-12 col-sm-6 col-md-4" *ngFor="let debut of debutList | paginate: { id: 'debutGrid', 
           itemsPerPage: pageSize, 
           currentPage: page, 

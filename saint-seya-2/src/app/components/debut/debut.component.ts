@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { take } from 'rxjs/operators';
+import { take, map } from 'rxjs/operators';
 import swal from 'sweetalert2';
 import { DebutService } from '../../shared/services/debut.service';
 import { Debut } from '../../shared/model/debut';
@@ -15,6 +15,7 @@ export class DebutComponent implements OnInit {
   @Input() debut: Debut;
 
   debutList: Debut[];
+  debutSetList: Debut[];
   pageSize: number;
   page: number;
   totalItems: number;
@@ -31,11 +32,12 @@ export class DebutComponent implements OnInit {
     this.getDebuts();
   }
 
-  //Buscar todos
+  //Buscar y mostrar todos
   private getDebuts(): void {
     this.debutService.getDebuts().pipe(take(1)).subscribe(resp => {
       this.debutList = resp;
-      this.debutList.forEach(element => { element.image = `https://diegochagas.com/saint-seiya-api/${element.image}` })
+      this.debutSetList = resp;
+      this.debutList.forEach(element => {element.image = `https://diegochagas.com/saint-seiya-api/${element.image}` })
       this.totalItems = this.debutList.length;
       this.loading = false;
     },
@@ -43,6 +45,25 @@ export class DebutComponent implements OnInit {
       swal.fire('Fallo en el cosmos', 'Hubo una interrupción en el cosmos, intenta elevarlo nuevamente.', 'error');
     });
   }
+
+  //Filtro
+  public getDebut(name: MatSelectChange){
+    if(name.value == 'all') {
+      this.getDebuts();
+      return;
+    }
+    let format;
+    format = name.value.toLowerCase().replace(' ', '-'); 
+    this.debutService.getDebut(format).pipe(take(1)).subscribe(resp => {
+      this.debutList = [resp];
+      this.debutList.forEach(element => {element.image = `https://diegochagas.com/saint-seiya-api/${element.image}` })
+      this.totalItems = this.debutList.length;
+      this.loading = false;
+    },
+  error => {
+    swal.fire('Fallo en el cosmos', 'Hubo una interrupción en el cosmos, intenta elevarlo nuevamente.', 'error');
+  });
+}
 
 
   pageChanged(page: number): void {

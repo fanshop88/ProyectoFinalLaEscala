@@ -9,6 +9,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { SharedModule } from './shared/shared.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HomeModule } from './components/home/home.module';
+import { PageNotfoundModule } from './shared/components/page-notfound.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomeModule } from './components/home/home.module';
     MaterialModule,
     SharedModule,
     HomeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    PageNotfoundModule
   ],
   providers: [],
   bootstrap: [AppComponent]

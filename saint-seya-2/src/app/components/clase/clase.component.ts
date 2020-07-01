@@ -72,14 +72,4 @@ export class ClaseComponent implements OnInit {
     this.page = page;
   }
 
-  filterByName(name: any){
-    this.claseList = this.claseListComplete.filter(cls => {
-      cls.name.includes(name.srcElement.value);
-    });
-  }
-
-  // moreInformation(characterId: number): void {
-  //   this.router.navigate(['characterDetail', characterId] )
-  // }
-
 }

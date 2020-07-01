@@ -5,19 +5,14 @@ import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class CharactersService {
+export class CuriosityService {
 
   api = environment.SS_API;
 
   constructor(private http: HttpClient) { }
 
-  // Cargar todos los personajes
-  getAllCharacters() {
-    return this.http.get<any>(`${this.api}/characters/`);
-  }
-
-  findCharacterById(id: number) {
-    return this.http.get<any>(`${this.api}/character/${id}`);
+  getCuriosities() {
+    return this.http.get<any>(`${this.api}/curiosities`);
   }
 
 }

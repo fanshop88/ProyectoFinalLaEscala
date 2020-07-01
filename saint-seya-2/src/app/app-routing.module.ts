@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { LayoutComponent } from './components/layout/layout.component';
+import { PageNotfoundComponent } from '../app/shared/components/page-notfound/page-notfound.component';
 
 const routes: Routes = [
   {
@@ -28,12 +29,17 @@ const routes: Routes = [
         path: 'debut',
         loadChildren: () => import('./components/debut/debut.module').then(m => m.DebutModule)
       },
+      {
+        path: 'curiosity',
+        loadChildren: () => import('./components/curiosity/curiosity.module').then(m => m.CuriosityModule)
+      },
     ]
   },
-  // {
-  //   path: '**',
-  //   loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
-  // }
+  {
+    path: '**',
+    component:PageNotfoundComponent
+    
+  }
 ];
 
 @NgModule({
